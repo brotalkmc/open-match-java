@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+    branches-ignore:
+      - main
+#  pull_request:
+
+jobs:
+  maven:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-java@v2
+        with:
+          java-version: '16'
+          distribution: 'adopt'
+
+      - name: Publish package
+        # These tests are not automated, skip them when ran
+        run: mvn package -DskipTests
