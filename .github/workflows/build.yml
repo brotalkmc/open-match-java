@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     branches-ignore:
-      - main
+      - master
 #  pull_request:
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
 
       - uses: actions/setup-java@v2
         with:
-          java-version: '16'
+          java-version: '17'
           distribution: 'adopt'
 
       - name: Publish package
