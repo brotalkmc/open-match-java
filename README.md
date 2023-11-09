@@ -12,3 +12,4 @@ This is divided into the different packages you may use for any project. They ar
 3. Evaluator
 4. Frontend
 5. Query
+6. Matchmaking Function (under match-function)
